@@ -4,10 +4,13 @@
   "private": true,
   "dependencies": {
     "dotenv": "^8.2.0",
+    "lodash.template": "^4.5.0",
+    "mixin-deep": "^2.0.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-map-gl": "^5.1.2",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "set-value": "^3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
