@@ -1,50 +1,56 @@
 {
-  "name": "traveller",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "dotenv": "^8.2.0",
-    "lodash.template": "^4.5.0",
-    "mixin-deep": "^2.0.1",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-    "react-map-gl": "^5.1.2",
-    "react-scripts": "3.2.0",
-    "set-value": "^3.0.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^2.7.0",
-    "@typescript-eslint/parser": "^2.7.0",
-    "eslint": "^6.6.0",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-node": "^10.0.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.16.0",
-    "eslint-plugin-react-hooks": "^1.7.0",
-    "eslint-plugin-standard": "^4.0.1"
-  }
+	"name": "traveller",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"dotenv": "^8.2.0",
+		"lodash.template": "^4.5.0",
+		"mixin-deep": "^2.0.1",
+		"react": "^16.11.0",
+		"react-dom": "^16.11.0",
+		"react-map-gl": "^5.1.2",
+		"react-scripts": "3.2.0",
+		"set-value": "^3.0.1"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject"
+	},
+	"eslintConfig": {
+		"extends": "react-app"
+	},
+	"prettier": {
+		"trailingComma": "es5",
+		"semi": false,
+		"singleQuote": true,
+		"useTabs": true
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "^2.7.0",
+		"@typescript-eslint/parser": "^2.7.0",
+		"eslint": "^6.6.0",
+		"eslint-config-airbnb": "^18.0.1",
+		"eslint-config-standard": "^14.1.0",
+		"eslint-plugin-import": "^2.18.2",
+		"eslint-plugin-jsx-a11y": "^6.2.3",
+		"eslint-plugin-node": "^10.0.0",
+		"eslint-plugin-promise": "^4.2.1",
+		"eslint-plugin-react": "^7.16.0",
+		"eslint-plugin-react-hooks": "^1.7.0",
+		"eslint-plugin-standard": "^4.0.1"
+	}
 }
