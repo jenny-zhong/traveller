@@ -1,11 +1,17 @@
-import React, { useState, setState } from 'react'
+import React, { useState } from 'react'
 import ReactMapGL, { Marker } from 'react-map-gl'
 import { mockData } from '../../mocks/mockVisited'
+
+type City = {
+	city: string
+	latitude: number
+	longitude: number
+}
 
 export const Map = () => {
 	const defaultViewport = {
 		width: 1200,
-		height: 1000,
+		height: 1200,
 		latitude: 37.7577,
 		longitude: -122.4376,
 		zoom: 8,
@@ -13,7 +19,7 @@ export const Map = () => {
 
 	const [viewport, setViewport] = useState(defaultViewport)
 
-	const cityList = []
+	const cityList: City[] = []
 	mockData.forEach(({ cities }) =>
 		cities.forEach((city) => cityList.push(city))
 	)
@@ -33,7 +39,7 @@ export const Map = () => {
 					offsetTop={-20}
 				>
 					<span style={{ fontSize: '2em', color: 'red' }}>
-						<i class="fas fa-map-marker"></i>
+						<i className="fas fa-map-marker"></i>
 					</span>
 				</Marker>
 			))}
