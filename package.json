@@ -3,10 +3,15 @@
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
+		"@material-ui/core": "^4.11.0",
+		"@material-ui/icons": "^4.9.1",
 		"@types/node": "^14.0.6",
 		"@types/react": "^16.9.35",
 		"@types/react-map-gl": "^5.2.4",
+		"@types/styled-components": "^5.1.0",
+		"@types/styled-system": "^5.1.9",
 		"dotenv": "^8.2.0",
+		"fontsource-roboto": "^2.1.4",
 		"lodash.template": "^4.5.0",
 		"mixin-deep": "^2.0.1",
 		"react": "^16.11.0",
@@ -15,6 +20,7 @@
 		"react-scripts": "3.2.0",
 		"set-value": "^3.0.1",
 		"styled-components": "^5.1.1",
+		"styled-system": "^5.1.5",
 		"typescript": "^3.9.3"
 	},
 	"scripts": {
