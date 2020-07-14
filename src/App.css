@@ -1,4 +1,7 @@
 .App {
 	text-align: center;
 	padding: 1em;
+	display: flex;
+	flex-direction: row;
+	color: white;
 }
