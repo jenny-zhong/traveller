@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import ReactMapGL, { Marker } from 'react-map-gl'
 import { mockData } from '../../mocks/mockVisited'
+import { Box } from '@material-ui/core'
 
 type City = {
 	city: string
@@ -24,25 +25,27 @@ export const Map = () => {
 		cities.forEach((city) => cityList.push(city))
 	)
 	return (
-		<ReactMapGL
-			mapboxApiAccessToken={process.env.REACT_APP_MAP_BOX_TOKEN}
-			{...viewport}
-			onViewportChange={(viewport) => setViewport(viewport)}
-			mapStyle="mapbox://styles/mapbox/dark-v9"
-		>
-			{cityList.map(({ latitude, longitude }, key) => (
-				<Marker
-					key={`marker-${key}`}
-					latitude={latitude}
-					longitude={longitude}
-					offsetLeft={-10}
-					offsetTop={-20}
-				>
-					<span style={{ fontSize: '2em', color: 'red' }}>
-						<i className="fas fa-map-marker"></i>
-					</span>
-				</Marker>
-			))}
-		</ReactMapGL>
+		<Box>
+			<ReactMapGL
+				mapboxApiAccessToken={process.env.REACT_APP_MAP_BOX_TOKEN}
+				{...viewport}
+				onViewportChange={(viewport) => setViewport(viewport)}
+				mapStyle="mapbox://styles/mapbox/dark-v9"
+			>
+				{cityList.map(({ latitude, longitude }, key) => (
+					<Marker
+						key={`marker-${key}`}
+						latitude={latitude}
+						longitude={longitude}
+						offsetLeft={-10}
+						offsetTop={-20}
+					>
+						<span style={{ fontSize: '2em', color: 'red' }}>
+							<i className="fas fa-map-marker"></i>
+						</span>
+					</Marker>
+				))}
+			</ReactMapGL>
+		</Box>
 	)
 }
