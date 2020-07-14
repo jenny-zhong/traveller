@@ -1,13 +1,13 @@
 import React from 'react'
 import './App.css'
 import { Map } from './components/Map/Map'
-import { List } from './components/List/List'
+import { TravelList } from './components/TravelList/TravelList'
 
 const App = () => {
 	return (
 		<div className="App">
 			<Map />
-			<List />
+			<TravelList />
 		</div>
 	)
 }

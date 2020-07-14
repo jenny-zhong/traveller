@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import ReactMapGL, { Marker } from 'react-map-gl'
 import { mockData } from '../../mocks/mockVisited'
 import { Box } from '@material-ui/core'
+import RoomIcon from '@material-ui/icons/Room'
 
 type City = {
 	city: string
@@ -40,9 +41,7 @@ export const Map = () => {
 						offsetLeft={-10}
 						offsetTop={-20}
 					>
-						<span style={{ fontSize: '2em', color: 'red' }}>
-							<i className="fas fa-map-marker"></i>
-						</span>
+						<RoomIcon color="secondary" fontSize="large" />
 					</Marker>
 				))}
 			</ReactMapGL>
