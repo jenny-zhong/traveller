@@ -13,14 +13,14 @@ import {
 	ListItemText,
 } from '@material-ui/core'
 import RoomIcon from '@material-ui/icons/Room'
+import { CitySearch } from '../CitySearch/CitySearch'
 
 const useStyles = makeStyles({
 	card: {
 		minWidth: 400,
 		marginLeft: 50,
-	},
-	input: {
-		width: '100%',
+		display: 'flex',
+		flexDirection: 'column',
 	},
 })
 
@@ -46,13 +46,10 @@ export const TravelList = () => {
 						</>
 					))}
 				</List>
+			</CardContent>
+			<CardContent>
 				<form>
-					<TextField
-						className={classes.input}
-						label="Enter a City"
-						variant="outlined"
-						color="primary"
-					></TextField>
+					<CitySearch />
 				</form>
 			</CardContent>
 		</Card>
