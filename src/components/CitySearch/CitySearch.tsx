@@ -42,7 +42,6 @@ export const CitySearch = () => {
 							className: `location-search-input ${classes.input}`,
 						})}
 						variant="outlined"
-						color="primary"
 						label="Enter a City"
 					/>
 					<Card className="autocomplete-dropdown-container">
