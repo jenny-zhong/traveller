@@ -4,6 +4,7 @@ import './index.css'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 import { createMuiTheme, ThemeProvider, CssBaseline } from '@material-ui/core'
+import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client'
 
 const theme = createMuiTheme({
 	palette: {
@@ -11,12 +12,19 @@ const theme = createMuiTheme({
 	},
 })
 
+const client = new ApolloClient({
+	uri: 'https://48p1r2roz4.sse.codesandbox.io',
+	cache: new InMemoryCache(),
+})
+
 ReactDOM.render(
-	<ThemeProvider theme={theme}>
-		<CssBaseline>
-			<App />
-		</CssBaseline>
-	</ThemeProvider>,
+	<ApolloProvider client={client}>
+		<ThemeProvider theme={theme}>
+			<CssBaseline>
+				<App />
+			</CssBaseline>
+		</ThemeProvider>
+	</ApolloProvider>,
 	document.getElementById('root')
 )
 

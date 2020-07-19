@@ -1,7 +1,6 @@
 import React from 'react'
 import { visitedCities } from '../../mocks/mockVisited'
 import {
-	TextField,
 	Card,
 	CardContent,
 	Typography,
