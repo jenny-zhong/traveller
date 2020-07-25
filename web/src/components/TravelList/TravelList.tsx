@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import { visitedCities } from '../../mocks/mockVisited'
+import React, { useContext } from 'react'
 import {
 	Card,
 	CardContent,
@@ -13,6 +12,7 @@ import {
 } from '@material-ui/core'
 import RoomIcon from '@material-ui/icons/Room'
 import { CitySearch } from '../CitySearch/CitySearch'
+import { CitiesContext } from '../../Context'
 
 const useStyles = makeStyles({
 	card: {
@@ -23,16 +23,9 @@ const useStyles = makeStyles({
 	},
 })
 
-type City = {
-	city: string
-	longitude: number
-	latitude: number
-}
-
 export const TravelList = () => {
 	const classes = useStyles()
-	const [cities, setCities] = useState(visitedCities)
-	const addCity = (city: City) => setCities([...cities, city])
+	const { cities, addCity } = useContext(CitiesContext)
 	return (
 		<Card className={classes.card}>
 			<CardContent>

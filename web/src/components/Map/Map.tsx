@@ -1,14 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import ReactMapGL, { Marker } from 'react-map-gl'
-import { mockData } from '../../mocks/mockVisited'
 import { Box } from '@material-ui/core'
 import RoomIcon from '@material-ui/icons/Room'
-
-type City = {
-	city: string
-	latitude: number
-	longitude: number
-}
+import { CitiesContext } from '../../Context'
 
 export const Map = () => {
 	const defaultViewport = {
@@ -20,11 +14,7 @@ export const Map = () => {
 	}
 
 	const [viewport, setViewport] = useState(defaultViewport)
-
-	const cityList: City[] = []
-	mockData.forEach(({ cities }) =>
-		cities.forEach((city) => cityList.push(city))
-	)
+	const { cities } = useContext(CitiesContext)
 	return (
 		<Box>
 			<ReactMapGL
@@ -33,7 +23,7 @@ export const Map = () => {
 				onViewportChange={(viewport) => setViewport(viewport)}
 				mapStyle="mapbox://styles/mapbox/dark-v9"
 			>
-				{cityList.map(({ latitude, longitude }, key) => (
+				{cities.map(({ latitude, longitude }, key) => (
 					<Marker
 						key={`marker-${key}`}
 						latitude={latitude}
