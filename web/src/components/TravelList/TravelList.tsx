@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { visitedCities } from '../../mocks/mockVisited'
 import {
 	Card,
@@ -23,8 +23,16 @@ const useStyles = makeStyles({
 	},
 })
 
+type City = {
+	city: string
+	longitude: number
+	latitude: number
+}
+
 export const TravelList = () => {
 	const classes = useStyles()
+	const [cities, setCities] = useState(visitedCities)
+	const addCity = (city: City) => setCities([...cities, city])
 	return (
 		<Card className={classes.card}>
 			<CardContent>
@@ -33,7 +41,7 @@ export const TravelList = () => {
 				</Typography>
 				<Divider />
 				<List>
-					{visitedCities.map(({ city }) => (
+					{cities.map(({ city }) => (
 						<>
 							<ListItem>
 								<ListItemIcon>
@@ -48,7 +56,7 @@ export const TravelList = () => {
 			</CardContent>
 			<CardContent>
 				<form>
-					<CitySearch />
+					<CitySearch onSubmit={addCity} />
 				</form>
 			</CardContent>
 		</Card>

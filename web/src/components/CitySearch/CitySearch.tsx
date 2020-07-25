@@ -18,15 +18,29 @@ const useStyles = makeStyles({
 		background: grey[700],
 	},
 })
-export const CitySearch = () => {
+
+type City = {
+	city: string
+	longitude: number
+	latitude: number
+}
+
+type CitySearchProps = {
+	onSubmit: (city: City) => void
+}
+export const CitySearch: React.FC<CitySearchProps> = ({ onSubmit }) => {
 	const [location, setLocation] = useState('')
 	const classes = useStyles()
 
-	const handleSelect = (address: string) => {
-		geocodeByAddress(address)
-			.then((results) => getLatLng(results[0]))
-			.then((latLng) => console.log('Success', latLng))
-			.catch((error) => console.error('Error', error))
+	const handleSelect = async (address: string) => {
+		try {
+			const results = await geocodeByAddress(address)
+			const { lat, lng } = await getLatLng(results[0])
+			const city = results[0].address_components[0].long_name
+			onSubmit({ city, longitude: lng, latitude: lat })
+		} catch (e) {
+			console.log('Error', e)
+		}
 	}
 	return (
 		<PlacesAutocomplete
