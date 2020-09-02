@@ -34,6 +34,7 @@ export const CitySearch: React.FC<CitySearchProps> = ({ onSubmit }) => {
 
 	const handleSelect = async (address: string) => {
 		try {
+			setLocation('')
 			const results = await geocodeByAddress(address)
 			const { lat, lng } = await getLatLng(results[0])
 			const city = results[0].address_components[0].long_name
